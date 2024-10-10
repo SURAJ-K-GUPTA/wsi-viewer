@@ -12,7 +12,7 @@ export default function Timer() {
   }, []);
 
   return (
-    <div className="text-xl font-bold text-gray-700 p-2">
+    <div className="text-xl font-bold text-gray-700 p-2 text-center">
       {time.toLocaleString()} {/* Display the current time */}
     </div>
   );

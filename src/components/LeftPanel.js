@@ -18,23 +18,23 @@ const data = {
 
 export default function LeftPanel() {
   return (
-    <div className="p-4 bg-white shadow-md">
+    <div className="p-4 bg-white shadow-md overflow-x-auto"> {/* Overflow to prevent breaking */}
       {/* RBC Section */}
       <h3 className="text-lg font-bold mb-2">RBC</h3>
-      <table className="table-auto w-full mb-4">
+      <table className="table-auto w-full text-sm mb-4"> {/* Added text-sm for compactness */}
         <thead>
-          <tr>
-            <th className="border px-4 py-2">Type</th>
-            <th className="border px-4 py-2">Count</th>
-            <th className="border px-4 py-2">Percentage</th>
+          <tr className="bg-gray-200">
+            <th className="border px-2 py-1">Type</th> {/* Reduced padding */}
+            <th className="border px-2 py-1">Count</th>
+            <th className="border px-2 py-1">Percentage</th>
           </tr>
         </thead>
         <tbody>
           {data.rbc.map((cell, index) => (
-            <tr key={index}>
-              <td className="border px-4 py-2">{cell.type}</td>
-              <td className="border px-4 py-2">{cell.count}</td>
-              <td className="border px-4 py-2">{cell.percentage}</td>
+            <tr key={index} className="hover:bg-gray-100">
+              <td className="border px-2 py-1">{cell.type}</td>
+              <td className="border px-2 py-1 text-center">{cell.count}</td> {/* Center align */}
+              <td className="border px-2 py-1 text-center">{cell.percentage}</td> {/* Center align */}
             </tr>
           ))}
         </tbody>
@@ -42,20 +42,20 @@ export default function LeftPanel() {
 
       {/* WBC Section */}
       <h3 className="text-lg font-bold mb-2">WBC</h3>
-      <table className="table-auto w-full mb-4">
+      <table className="table-auto w-full text-sm mb-4">
         <thead>
-          <tr>
-            <th className="border px-4 py-2">Type</th>
-            <th className="border px-4 py-2">Count</th>
-            <th className="border px-4 py-2">Percentage</th>
+          <tr className="bg-gray-200">
+            <th className="border px-2 py-1">Type</th>
+            <th className="border px-2 py-1">Count</th>
+            <th className="border px-2 py-1">Percentage</th>
           </tr>
         </thead>
         <tbody>
           {data.wbc.map((cell, index) => (
-            <tr key={index}>
-              <td className="border px-4 py-2">{cell.type}</td>
-              <td className="border px-4 py-2">{cell.count}</td>
-              <td className="border px-4 py-2">{cell.percentage}</td>
+            <tr key={index} className="hover:bg-gray-100">
+              <td className="border px-2 py-1">{cell.type}</td>
+              <td className="border px-2 py-1 text-center">{cell.count}</td>
+              <td className="border px-2 py-1 text-center">{cell.percentage}</td>
             </tr>
           ))}
         </tbody>
@@ -63,17 +63,17 @@ export default function LeftPanel() {
 
       {/* Platelets Section */}
       <h3 className="text-lg font-bold mb-2">Platelets</h3>
-      <table className="table-auto w-full">
+      <table className="table-auto w-full text-sm">
         <thead>
-          <tr>
-            <th className="border px-4 py-2">Count</th>
-            <th className="border px-4 py-2">Percentage</th>
+          <tr className="bg-gray-200">
+            <th className="border px-2 py-1">Count</th>
+            <th className="border px-2 py-1">Percentage</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="border px-4 py-2">{data.platelets.count}</td>
-            <td className="border px-4 py-2">{data.platelets.percentage}</td>
+          <tr className="hover:bg-gray-100">
+            <td className="border px-2 py-1 text-center">{data.platelets.count}</td>
+            <td className="border px-2 py-1 text-center">{data.platelets.percentage}</td>
           </tr>
         </tbody>
       </table>
