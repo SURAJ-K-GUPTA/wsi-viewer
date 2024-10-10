@@ -21,22 +21,30 @@ function App() {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4 p-4 min-h-screen bg-gray-100">
-      <div className="col-span-4 text-center">
-        <Timer /> {/* Show real-time clock */}
-      </div>
-      <div className="col-span-1">
-        <LeftPanel />
-      </div>
-      <div className="col-span-2 flex justify-center items-start ">
-        <CenterViewer hoverPosition={hoverPosition} />
-      </div>
-      <div className="col-span-1">
-        <TopRightPanel onHover={handleHover} />
-        <PatientInfo />
-        <ReportButton />
-      </div>
-    </div>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 min-h-screen bg-gray-100">
+  {/* Timer */}
+  <div className="col-span-1 md:col-span-4 text-center">
+    <Timer /> {/* Show real-time clock */}
+  </div>
+
+  {/* Left Panel */}
+  <div className="col-span-1">
+    <LeftPanel />
+  </div>
+
+  {/* Center Viewer */}
+  <div className="col-span-1 md:col-span-2 flex justify-center items-start">
+    <CenterViewer hoverPosition={hoverPosition} />
+  </div>
+
+  {/* Right Panel with TopRightPanel, PatientInfo, ReportButton */}
+  <div className="col-span-1">
+    <TopRightPanel onHover={handleHover} />
+    <PatientInfo />
+    <ReportButton />
+  </div>
+</div>
+
   );
 }
 
